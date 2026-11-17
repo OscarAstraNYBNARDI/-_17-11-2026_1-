@@ -1,0 +1,23 @@
+name: Feature CI
+
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - '!feature/wip'
+    paths:
+      - 'src/**'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Показать коммит и ветку
+        run: |
+          echo "Commit SHA: ${{ github.sha }}"
+          echo "Ref: ${{ github.ref }}"
