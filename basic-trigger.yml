@@ -1,0 +1,15 @@
+name: Basic Trigger
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.html'
+
+jobs:
+  test-html:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Сообщение
+        run: echo "Успешный push HTML-файла в ветку main"
